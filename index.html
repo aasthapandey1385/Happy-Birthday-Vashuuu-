@@ -1,104 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Vashu!</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            color: #ff6b81;
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            color: #b2bec3;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-        .photo-card {
-            background: #1e1e1e;
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        .photo-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-        .caption {
-            margin-top: 15px;
-            font-size: 1.1rem;
-            color: #dfe6e9;
-            font-weight: 500;
-        }
-        audio {
-            width: 100%;
-            margin-top: 20px;
-            border-radius: 30px;
-        }
-        .footer {
-            margin-top: 40px;
-            color: #636e72;
-            font-size: 0.9rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Vashu!</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Lock Screen Style */
+    #lock-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #121212;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ff4081;
+      text-align: center;
+      margin-top: 15px;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 12px;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* Main Content */
+    #main-content {
+      display: none;
+    }
+
+    .header-title {
+      color: #ff69b4;
+      font-size: 26px;
+      margin-bottom: 5px;
+    }
+
+    .sub-title {
+      color: #cccccc;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    audio {
+      width: 90%;
+      max-width: 400px;
+      margin-bottom: 25px;
+    }
+
+    .card {
+      background: #1e1e1e;
+      border-radius: 16px;
+      padding: 12px;
+      margin: 0 auto 25px auto;
+      max-width: 380px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .caption {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #e0e0e0;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Happy 22nd Birthday, Vashu! 🎂✨</h1>
-        <p class="subtitle">A little gallery of our favorite moments 💗🧿</p>
+  <!-- 🔒 Passcode Screen -->
+  <div id="lock-screen">
+    <h2 style="color: #ff4081;">🔒 Enter Passcode</h2>
+    <p>Secret code dalo website kholne ke liye!</p>
+    <input type="password" id="passInput" placeholder="Passcode">
+    <button onclick="checkPasscode()">Open Surprise ✨</button>
+    <p id="error-msg" style="color: red; display: none; margin-top: 10px;">Galat Passcode! Phir se try karo.</p>
+  </div>
 
-        <!-- Background Music -->
-        <audio controls autoplay loop>
-            <source src="song.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
+  <!-- 🎉 Birthday Gallery -->
+  <div id="main-content">
+    <h1 class="header-title">Happy 22nd Birthday, Vashu! 🎂✨</h1>
+    <p class="sub-title">A little gallery of our favorite moments 💖🧿</p>
 
-        <!-- Photo 1: Childhood -->
-        <div class="photo-card">
-            <img src="childhood.jpg" alt="Childhood AI Photo">
-            <div class="caption">Bachpan se hi fixed tha ki dono ek dusre ke hai 😂💗</div>
-        </div>
+    <!-- Music Player -->
+    <audio controls autoplay loop>
+      <source src="song.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
 
-        <!-- Photo 2: Favorite Photo -->
-        <div class="photo-card">
-            <img src="photo1.jpg" alt="Favorite Photo">
-            <div class="caption">Isse zyaada cute photo ho hi nhi sakta ✨</div>
-        </div>
-
-        <!-- Photo 3: Black & White -->
-        <div class="photo-card">
-            <img src="photo2.jpg" alt="B&W Photo">
-            <div class="caption">Puraani movies ka superhit hero 🎬</div>
-        </div>
-
-        <!-- Photo 4: Tracksuit -->
-        <div class="photo-card">
-            <img src="photo3.jpg" alt="Tracksuit Couple">
-            <div class="caption">The COOLEST Tracksuit Couple ever! 😂💙</div>
-        </div>
-
-        <div class="footer">
-            Made with lots of love and patience! 💗🧿
-        </div>
+    <!-- Photo 1: Childhood -->
+    <div class="card">
+      <img src="childhood.jpg" alt="Childhood">
+      <div class="caption">Bachpan ki pyari yaadein! 🐣✨</div>
     </div>
+
+    <!-- Photo 2: Photo 1 -->
+    <div class="card">
+      <img src="photo1.jpg" alt="Photo 1">
+      <div class="caption">Sath me bitaya hua har lamha khaas hai! 💕</div>
+    </div>
+
+    <!-- Photo 3: Photo 2 -->
+    <div class="card">
+      <img src="photo2.jpg.jpeg" alt="Photo 2">
+      <div class="caption">Muskurate raho hamesha! 😄✨</div>
+    </div>
+
+    <!-- Photo 4: Photo 3 -->
+    <div class="card">
+      <img src="photo3.jpg" alt="Photo 3">
+      <div class="caption">Best memories together! 🎉💖</div>
+    </div>
+  </div>
+
+  <script>
+    function checkPasscode() {
+      var input = document.getElementById("passInput").value;
+      // Niche '1234' ki jagah apna Secret Password daal sakti ho
+      if (input === "1234") { 
+        document.getElementById("lock-screen").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+      } else {
+        document.getElementById("error-msg").style.display = "block";
+      }
+    }
+  </script>
 
 </body>
 </html>
