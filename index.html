@@ -5,93 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Birthday Vashu!</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       background-color: #121212;
       color: #ffffff;
-      font-family: Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       text-align: center;
-      margin: 0;
-      padding: 20px;
+      padding: 20px 15px;
     }
 
-    /* Lock Screen Style */
+    /* 🔒 Lock Screen */
     #lock-screen {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       background: #121212;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      z-index: 999;
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    #lock-screen h2 {
+      color: #ff4081;
+      margin-bottom: 10px;
+    }
+
+    #lock-screen p {
+      color: #b0b0b0;
+      font-size: 14px;
+      margin-bottom: 15px;
     }
 
     input[type="password"] {
-      padding: 10px;
+      padding: 12px;
       font-size: 16px;
       border-radius: 8px;
       border: 1px solid #ff4081;
+      background: #1e1e1e;
+      color: white;
       text-align: center;
-      margin-top: 15px;
       outline: none;
+      width: 200px;
     }
 
     button {
-      padding: 10px 20px;
-      margin-top: 12px;
+      padding: 12px 24px;
+      margin-top: 15px;
       background-color: #ff4081;
       color: white;
       border: none;
       border-radius: 8px;
       font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
     }
 
-    /* Main Content */
+    /* 🖼️ Main Page */
     #main-content {
       display: none;
+      max-width: 450px;
+      margin: 0 auto;
     }
 
-    .header-title {
-      color: #ff69b4;
-      font-size: 26px;
-      margin-bottom: 5px;
+    h1 {
+      color: #ff6584;
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 6px;
     }
 
     .sub-title {
-      color: #cccccc;
+      color: #a0a0a0;
       font-size: 14px;
       margin-bottom: 20px;
     }
 
     audio {
-      width: 90%;
-      max-width: 400px;
+      width: 100%;
       margin-bottom: 25px;
+      border-radius: 30px;
     }
 
     .card {
       background: #1e1e1e;
       border-radius: 16px;
       padding: 12px;
-      margin: 0 auto 25px auto;
-      max-width: 380px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      margin-bottom: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      border: 1px solid #2a2a2a;
     }
 
     .card img {
       width: 100%;
+      height: auto;
       border-radius: 12px;
       display: block;
     }
 
     .caption {
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: 15px;
       color: #e0e0e0;
+      line-height: 1.4;
     }
   </style>
 </head>
@@ -99,45 +124,44 @@
 
   <!-- 🔒 Passcode Screen -->
   <div id="lock-screen">
-    <h2 style="color: #ff4081;">🔒 Enter Passcode</h2>
-    <p>Secret code dalo website kholne ke liye!</p>
-    <input type="password" id="passInput" placeholder="Passcode">
+    <h2>🔒 Enter Passcode</h2>
+    <p>Secret password daalo website kholne ke liye!</p>
+    <input type="password" id="passInput" placeholder="Password">
     <button onclick="checkPasscode()">Open Surprise ✨</button>
-    <p id="error-msg" style="color: red; display: none; margin-top: 10px;">Galat Passcode! Phir se try karo.</p>
+    <p id="error-msg" style="color: #ff5252; display: none; margin-top: 12px;">Galat Password! Phir se try karo.</p>
   </div>
 
-  <!-- 🎉 Birthday Gallery -->
+  <!-- 🎉 Main Birthday Page -->
   <div id="main-content">
-    <h1 class="header-title">Happy 22nd Birthday, Vashu! 🎂✨</h1>
+    <h1>Happy 22nd Birthday, Vashu! 🎂✨</h1>
     <p class="sub-title">A little gallery of our favorite moments 💖🧿</p>
 
     <!-- Music Player -->
-    <audio controls autoplay loop>
+    <audio controls loop>
       <source src="song.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
     </audio>
 
-    <!-- Photo 1: Childhood -->
+    <!-- Photo 1 -->
     <div class="card">
-      <img src="childhood.jpg" alt="Childhood">
-      <div class="caption">Bachpan ki pyari yaadein! 🐣✨</div>
+      <img src="childhood.jpg" alt="Photo 1">
+      <div class="caption">Bachpan ki pyaari yaadein! 🐣✨</div>
     </div>
 
-    <!-- Photo 2: Photo 1 -->
+    <!-- Photo 2 -->
     <div class="card">
-      <img src="photo1.jpg" alt="Photo 1">
+      <img src="photo1.jpg" alt="Photo 2">
       <div class="caption">Sath me bitaya hua har lamha khaas hai! 💕</div>
     </div>
 
-    <!-- Photo 3: Photo 2 -->
+    <!-- Photo 3 -->
     <div class="card">
-      <img src="photo2.jpg.jpeg" alt="Photo 2">
+      <img src="photo2.jpg.jpeg" alt="Photo 3">
       <div class="caption">Muskurate raho hamesha! 😄✨</div>
     </div>
 
-    <!-- Photo 4: Photo 3 -->
+    <!-- Photo 4 -->
     <div class="card">
-      <img src="photo3.jpg" alt="Photo 3">
+      <img src="photo3.jpg" alt="Photo 4">
       <div class="caption">Best memories together! 🎉💖</div>
     </div>
   </div>
@@ -145,8 +169,7 @@
   <script>
     function checkPasscode() {
       var input = document.getElementById("passInput").value;
-      // Niche '1234' ki jagah apna Secret Password daal sakti ho
-      if (input === "1234") { 
+      if (input === "1408") { 
         document.getElementById("lock-screen").style.display = "none";
         document.getElementById("main-content").style.display = "block";
       } else {
